@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>SideProject會員登入成功</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        .wrapper {
+            display: inline-block;
+            text-align: left;
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            background-color: #fff;
+        }
+        table {
+            margin: 0 auto;
+            border-collapse: collapse;
+            width: 100%;
+            max-width: 600px; /* Limit the table width */
+        }
+        td {
+            padding: 10px 20px;
+            border: 1px solid #ddd;
+            text-align: center; /* Center align the text in table cells */
+        }
+        a {
+            text-decoration: none;
+            color: #fff;
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            margin: 10px 0;
+        }
+        a:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+<h1 th:text="${session.M.name} + '，歡迎登入'"></h1>
+<div class="wrapper">
+    <table>
+        <tr>
+            <td><a href="/member/queryMember">查詢 Member 會員</a></td>
+        </tr>
+        <tr>
+            <td><a href="/member/updateMember">更新 Member 會員</a></td>
+        </tr>
+        <tr>
+            <td><a href="/member/deleteMember">刪除 Member 會員</a></td>
+        </tr>
+        <tr>
+            <td><a href="/index.html">回登入頁</a></td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>SideProject 會員登入</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .wrapper {
+            display: inline-block;
+            text-align: left;
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            background-color: #fff;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+
+        input[type="text"]::placeholder, input[type="password"]::placeholder {
+            color: #aaa;
+        }
+
+        .action-row {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .action-row a, .action-row input[type="submit"] {
+            display: inline-block;
+            margin: 0 5px;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .action-row a:hover, .action-row input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+<h1>Member 會員登入頁面</h1>
+<div class="wrapper">
+    <form action="/member/loginMember" method="post">
+        <div class="form-group">
+            <label for="username">UserName：</label>
+            <input type="text" id="username" name="username" placeholder="測試帳號 member " required>
+        </div>
+        <div class="form-group">
+            <label for="password">Password：</label>
+            <input type="password" id="password" name="password" placeholder="測試密碼 000" required>
+        </div>
+        <div class="action-row">
+            <a href="addMember.html">新會員註冊</a>
+            <input type="submit" value="確認">
+        </div>
+    </form>
+</div>
+</body>
+</html>
+

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>SideProject會員查詢</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 20px;
+        }
+        .wrapper {
+            display: inline-block;
+            text-align: left;
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            background-color: #fff;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        table {
+            margin: 0 auto;
+            border-collapse: collapse;
+            width: 100%;
+            max-width: 600px; /* Limit the table width */
+        }
+        td {
+            padding: 10px 20px;
+            border: 1px solid #ddd;
+            text-align: center; /* Center align the text in table cells */
+        }
+        .header-row {
+            background-color: #a9a9a9;
+        }
+        .even-row {
+            background-color: #f2f2f2;
+        }
+        .odd-row {
+            background-color: #ffffff;
+        }
+        a {
+            text-decoration: none;
+            color: #fff;
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            margin: 10px 0;
+        }
+        a:hover {
+            background-color: #0056b3;
+        }
+        .centered {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<h1>Member會員查詢Page</h1>
+<div class="wrapper">
+    <table>
+        <tr class="header-row">
+            <td>ID</td>
+            <td>Name</td>
+            <td>UserName</td>
+            <td>Password</td>
+            <td>Address</td>
+            <td>Phone</td>
+        </tr>
+
+        <tr th:each="m, iterStat : ${session.LM}" th:classappend="${iterStat.index % 2 == 0 ? 'even-row' : 'odd-row'}">
+            <td th:text="${m.id}"></td>
+            <td th:text="${m.name}"></td>
+            <td th:text="${m.username}"></td>
+            <td th:text="${m.password}"></td>
+            <td th:text="${m.address}"></td>
+            <td th:text="${m.phone}"></td>
+        </tr>
+        <tr>
+            <td colspan="6" class="centered">
+                <a href="/member/loginSuccess">回Member會員登入成功Page</a>
+            </td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>
+
