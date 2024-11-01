@@ -1,4 +1,4 @@
-# 此為個人專案 - 會員登入系統
+# Side Project - 會員登入系統
 
 ## 使用技術
 * 後端：Java / Spring Boot 3.2.3
